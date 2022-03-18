@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const URL = 'http://localhost/shoppinglist';
+const URL = 'http://localhost/shoppinglist/';
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
   }
 
   return (
+
     <div className='container'>
       <h1>shopping list</h1>
       <form onSubmit={save}>
@@ -63,16 +64,13 @@ function App() {
       </form>
       <ul>
         {items?.map(item => (
-          <a class='item' key={item.id}>
+          <a className='item' key={item.id}>
             {item.id && item.description}&nbsp;
-            <a class='amount' key={item.id}>
+            <a className='amount' key={item.id}>
               {item.id && item.amount}&nbsp; </a>
-
-            <a href='#' className='delete' onClick={() => remove(item.id)}>delete
-            </a>
+            <a href='#' className='delete' onClick={() => remove(item.id)}>delete</a>
             <br></br>
           </a>
-
         ))}
       </ul>
     </div>
