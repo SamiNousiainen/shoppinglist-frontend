@@ -13,11 +13,11 @@ function App() {
 
   useEffect(() => {
     axios.get(URL)
-    .then((response) => {
+      .then((response) => {
         setItems(response.data);
-    }).catch(error => {
-     alert(error.response ? error.response.data.error : error);
-    });
+      }).catch(error => {
+        alert(error.response ? error.response.data.error : error);
+      });
   }, [])
 
   function save(e) {
