@@ -62,17 +62,14 @@ function App() {
         <input type='number' value={amount} placeholder='amount' onChange={e => setAmount(e.target.value)} />
         <button>add</button>
       </form>
-      <ul>
+      <ol>
         {items?.map(item => (
-          <a className='item' key={item.id}>
-            {item.id && item.description}&nbsp;
-            <a className='amount' key={item.id}>
-              {item.id && item.amount}&nbsp; </a>
-            <a href='#' className='delete' onClick={() => remove(item.id)}>delete</a>
-            <br></br>
-          </a>
+          <li key={item.id}>
+            <span>{item.description}</span> {item.amount} &nbsp;
+            <a href="#" className="delete" onClick={() => remove(item.id)}>delete</a>
+          </li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }
